@@ -49,7 +49,7 @@ export default function CategoryTabs({ images }) {
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label="basic tabs example"
+          aria-label="Image categories"
         >
           {categories.map((label, index) => (
             <Tab label={label} {...a11yProps(index)} />
