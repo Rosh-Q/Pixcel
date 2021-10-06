@@ -43,3 +43,8 @@ git push origin branch-name
 - Don't spam it will be labeled as spam
 - Share your ideas before making changes to code
 - Try to keep the code in the same format
+
+
+
+## Contribution made by Castle1992
+-Added the navbar with the inline AND internal CSS styling in /public/index.html. 
