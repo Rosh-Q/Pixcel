@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import unsplash from '../api/unsplash';
+import "./searchBar.css"
 
-const SearchBar = ({ onSub }) => {
+const SearchBar = ({ onResult }) => {
 	const [searchValue, setSearchValue] = useState('');
 	const [debouncedTerm, setDebouncedTerm] = useState('');
 
@@ -9,7 +11,7 @@ const SearchBar = ({ onSub }) => {
 // setting a debounced term after 1000ms stop in typing
 	useEffect(()=> {
 	const timeOutId = setTimeout(()=> {
-			setDebouncedTerm(searchValue)
+			setDebouncedTerm(searchValue? searchValue: "night")
 		},1000)
 	return ()=> {  
 		clearTimeout(timeOutId)
@@ -18,22 +20,29 @@ const SearchBar = ({ onSub }) => {
 
 // sending the debounced term to App component
 	useEffect(()=> {
-		onSub(debouncedTerm)
+		const search = async () => {
+			const response = await unsplash.get('/search/photos', {
+				params: { query: debouncedTerm },
+			});
+			onResult(response.data.results)
+		};
+		if(debouncedTerm){
+			search()
+		}
+		
 	},[debouncedTerm])
 
 	return (
-		<div className='ui segment'>
-			<form className='ui form' >
-				<div className='field'>
-					<label>Search here</label>
+		<div className="container">
+			<form className="ui form">
+				<div className='searchBar field'>
 					<input
 						type='text'
 						value={searchValue}
 						onChange={handleFieldChange}
 						placeholder={'Search for something'}
 					/>
-				</div>
-			</form>
+				</div></form>
 		</div>
 	);
 };
