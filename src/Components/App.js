@@ -16,7 +16,7 @@ const App = () => {
 
 	return (
 		<div className='ui container'>
-			<SearchBar onSubmit={searchVal} />
+			<SearchBar onSub={searchVal} />
 			<ImageList images={images} />
 		</div>
 	);
