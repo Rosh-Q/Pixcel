@@ -43,8 +43,9 @@ git push origin branch-name
 - Don't spam it will be labeled as spam
 - Share your ideas before making changes to code
 - Try to keep the code in the same format
+- 
+## Contributors 
+- [tchestnut85](https://github.com/tchestnut85)
+- [Castle1992](https://github.com/Castle1992)
+- [thesahindia](https://github.com/thesahindia)
 
-
-
-## Contribution made by Castle1992
--Added the navbar with the inline AND internal CSS styling in /public/index.html. 
