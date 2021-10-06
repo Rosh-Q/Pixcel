@@ -1,0 +1,17 @@
+.container {
+    height: 500px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBar {
+    width: 1000px
+}
+
+.searchBar input {
+    width: 100% !important;
+    font-size: 20px !important;
+    /* padding: 10px 10px 10px 0px */
+}
