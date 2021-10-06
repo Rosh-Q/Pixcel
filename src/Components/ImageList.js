@@ -1,13 +1,23 @@
-import "./ImageList.css" 
-import React from "react";
-import Image from "./Image"
-function ImageList(props){
-    
-    const images = props.images.map((image)=>{
-        return <Image key={image.id} image={image} />
-    })
+import './ImageList.css';
 
-    return <div className="image-list">{images}</div>
-}
+import Image from './Image';
+import React from 'react';
 
-export default ImageList
+const ImageList = ({ images }) => {
+	const NO_SEARCH_TEXT = 'Search for something!';
+
+	// TODO - display a message if no search results are found
+
+	const renderImages = () =>
+		images.length ? (
+			images.map(image => <Image key={image.id} image={image} />)
+		) : (
+			<div>
+				<p>{NO_SEARCH_TEXT}</p>
+			</div>
+		);
+
+	return <div className='image-list'>{renderImages()}</div>;
+};
+
+export default ImageList;
