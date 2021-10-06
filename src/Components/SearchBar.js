@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 
 const SearchBar = ({ onSub }) => {
-	const [searchValue, setSearchValue] = useState({ value: ' ' });
+	const [searchValue, setSearchValue] = useState('');
 
-	const handleFieldChange = e => setSearchValue({ value: e.target.value });
+	const handleFieldChange = e => setSearchValue(e.target.value);
 
-	const handleSubmit = event => {
-		event.preventDefault();
-		onSub(searchValue);
+	const handleSubmit = e => {
+		e.preventDefault();
+		try {
+			onSub(searchValue);
+		} catch (err) {
+			console.error(err);
+		}
+		setSearchValue('');
 	};
 
 	return (
@@ -19,6 +24,7 @@ const SearchBar = ({ onSub }) => {
 						type='text'
 						value={searchValue}
 						onChange={handleFieldChange}
+						placeholder={'Search for something'}
 					/>
 				</div>
 			</form>
