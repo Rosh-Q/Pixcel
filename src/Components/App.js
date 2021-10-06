@@ -5,13 +5,13 @@ import SearchBar from './SearchBar';
 import unsplash from '../api/unsplash';
 
 const App = () => {
-	const [images, setImages] = useState({ images: [] });
+	const [images, setImages] = useState([]);
 
 	const searchVal = async val => {
 		const response = await unsplash.get('/search/photos', {
 			params: { query: val },
 		});
-		setImages({ images: response.data.results });
+		setImages(response.data.results);
 	};
 
 	return (
