@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import ImageList from './ImageList';
 import SearchBar from './SearchBar';
+import Footer from './footer/Footer';
 import unsplash from '../api/unsplash';
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
 		<div className='ui container'>
 			<SearchBar onSub={searchVal} />
 			<ImageList images={images} />
+			<Footer/>
 		</div>
 	);
 };
