@@ -1,0 +1,16 @@
+ul {
+    list-style-type: none;
+    display: block;
+}
+
+li {
+    float: left;
+}
+.footer-image{
+    height: 50px;
+    margin-left: 15px;
+}
+
+.ui.segment{
+    height: 100px;
+}
