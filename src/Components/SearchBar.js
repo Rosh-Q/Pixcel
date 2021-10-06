@@ -1,23 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const SearchBar = ({ onSub }) => {
 	const [searchValue, setSearchValue] = useState('');
+	const [debouncedTerm, setDebouncedTerm] = useState('');
 
 	const handleFieldChange = e => setSearchValue(e.target.value);
 
-	const handleSubmit = e => {
-		e.preventDefault();
-		try {
-			onSub(searchValue);
-		} catch (err) {
-			console.error(err);
-		}
-		setSearchValue('');
-	};
+// setting a debounced term after 1000ms stop in typing
+	useEffect(()=> {
+	const timeOutId = setTimeout(()=> {
+			setDebouncedTerm(searchValue)
+		},1000)
+	return ()=> {  
+		clearTimeout(timeOutId)
+	}
+	},[searchValue])
+
+// sending the debounced term to App component
+	useEffect(()=> {
+		onSub(debouncedTerm)
+	},[debouncedTerm])
 
 	return (
 		<div className='ui segment'>
-			<form className='ui form' onSubmit={handleSubmit}>
+			<form className='ui form' >
 				<div className='field'>
 					<label>Search here</label>
 					<input
