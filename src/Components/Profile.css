@@ -1,0 +1,118 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://images.unsplash.com/photo-1570470767483-286963cb60cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80");
+    background-position: center;
+    background-size: cover;
+}
+
+.profile>h1 {
+    color: white;
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+
+
+.profile-container {
+    border-radius: 10px;
+    width: 60% ;
+    background-color: white;
+    padding: 41px 65px 62px 65px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.ui.form h3 {
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.ui.form input {
+    border: 0 !important;
+    border-radius: 0 !important;
+    border-bottom: 1.5px solid rgb(139, 139, 139) !important;
+    padding: 10px 10px 7px 0px !important;
+    font-size: 20px !important;
+    margin-bottom: 21px !important;
+}
+
+.profile-field {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-field img {
+    position: absolute;
+    margin-left: 82%;
+}
+
+.profile-field>label {
+    color: gray;
+    font-size: 11px;
+    width: 100px;
+    font-weight: bolder;
+}
+
+.inner-data {
+    margin-left: 100px;
+    width: 400px;
+    font-weight: bold;
+}
+
+.right.chevron.icon {
+    height: 25px;
+    margin-left: 35px;
+}
+
+.security {
+    display: flex;
+    flex-direction: row;
+}
+
+.pass {
+    display: flex;
+    flex-direction: column;
+}
+
+.pass>label {
+    color: gray;
+    font-size: 11px;
+    width: 300px;
+    font-weight: bolder;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.verification {
+    margin-left: 120px;
+}
+
+.step>label {
+    color: gray;
+    font-size: 11px;
+    font-weight: bolder;
+    width: 300px;
+}
+
+.phone-verify>label {
+    color: gray;
+    font-size: 11px;
+    font-weight: bolder;
+    width: 300px;
+}
+
+.ui.toggle.button {
+    margin-top: 25px;
+}
+
+.phone-verify {
+    margin-top: 30px;
+}
