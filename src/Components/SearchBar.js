@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import unsplash from '../api/unsplash';
 import "./searchBar.css"
+import { BiSearch } from 'react-icons/bi';
 
 const SearchBar = ({ onResult }) => {
 	const [searchValue, setSearchValue] = useState('');
@@ -34,15 +35,15 @@ const SearchBar = ({ onResult }) => {
 
 	return (
 		<div className="container">
-			<form className="ui form">
-				<div className='searchBar field'>
-					<input
-						type='text'
-						value={searchValue}
-						onChange={handleFieldChange}
-						placeholder={'Search for something'}
-					/>
-				</div></form>
+			<div className='searchBar field'>
+				<input
+					type='text'
+					value={searchValue}
+					onChange={handleFieldChange}
+					placeholder={'Search for something'}
+				/>
+				<BiSearch className="searchIcon" size="30px" color="green"/>
+			</div>
 		</div>
 	);
 };
